@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - MP Solutions</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#6366f1',
+                        secondary: '#ec4899',
+                        dark: '#0f172a',
+                        darker: '#020617',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-darker text-gray-200 font-sans antialiased selection:bg-primary selection:text-white pt-20">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 transition-all duration-300 bg-dark/90 backdrop-blur-md border-b border-gray-800" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.location.href='index.html'">
+                    <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-primary/30">MP</div>
+                    <span class="font-bold text-2xl tracking-tight text-white">Solutions</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html" class="text-gray-300 hover:text-white px-3 py-2 rounded-md font-medium transition-colors">Home</a>
+                        <a href="products.html" class="text-gray-300 hover:text-white px-3 py-2 rounded-md font-medium transition-colors">Products</a>
+                        <a href="about.html" class="text-gray-300 hover:text-white px-3 py-2 rounded-md font-medium transition-colors">About</a>
+                        <a href="contact.html" class="text-primary font-medium px-3 py-2 rounded-md hover:text-primary transition-colors">Contact</a>
+                    </div>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none"><i class="fas fa-bars text-2xl"></i></button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-dark/95 backdrop-blur-md border-b border-gray-800 absolute w-full">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="products.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Products</a>
+                <a href="about.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About</a>
+                <a href="contact.html" class="text-primary block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Section -->
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Get in <span class="text-primary">Touch</span></h1>
+                <p class="text-gray-400 max-w-2xl mx-auto">Have questions about a build? Need support? Send us a message.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Contact Info -->
+                <div class="bg-dark p-8 rounded-2xl border border-gray-800">
+                    <h3 class="text-2xl font-bold text-white mb-6">Contact Information</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary text-xl flex-shrink-0">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-white mb-1">Our Location</h4>
+                                <p class="text-gray-400">123 Tech Avenue, Colombo 04,<br>Sri Lanka</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center text-secondary text-xl flex-shrink-0">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-white mb-1">Phone Number</h4>
+                                <p class="text-gray-400">+94 77 123 4567<br>+94 11 234 5678</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-500 text-xl flex-shrink-0">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-white mb-1">Email Address</h4>
+                                <p class="text-gray-400">support@mpsolutions.lk<br>sales@mpsolutions.lk</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-dark p-8 rounded-2xl border border-gray-800">
+                    <form onsubmit="event.preventDefault(); alert('Message sent successfully! (This is a demo)');">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-400 mb-2">First Name</label>
+                                <input type="text" required class="w-full bg-darker border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-400 mb-2">Last Name</label>
+                                <input type="text" required class="w-full bg-darker border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors">
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-sm font-medium text-gray-400 mb-2">Email Address</label>
+                            <input type="email" required class="w-full bg-darker border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors">
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-sm font-medium text-gray-400 mb-2">Message</label>
+                            <textarea rows="4" required class="w-full bg-darker border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors resize-none"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-gradient-to-r from-primary to-secondary text-white font-bold text-lg py-3 rounded-lg hover:shadow-lg hover:shadow-primary/30 transition-all duration-300">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-darker pt-16 pb-8 border-t border-gray-800 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-500 text-sm">
+            © 2026 MP Solutions. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

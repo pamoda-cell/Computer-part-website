@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - MP Solutions</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#6366f1',
+                        secondary: '#ec4899',
+                        dark: '#0f172a',
+                        darker: '#020617',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-darker text-gray-200 font-sans antialiased selection:bg-primary selection:text-white pt-20">
+
+    <!-- Navigation (Same as index.html) -->
+    <nav class="fixed top-0 w-full z-50 transition-all duration-300 bg-dark/90 backdrop-blur-md border-b border-gray-800" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.location.href='index.html'">
+                    <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-primary/30">MP</div>
+                    <span class="font-bold text-2xl tracking-tight text-white">Solutions</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html" class="text-gray-300 hover:text-white px-3 py-2 rounded-md font-medium transition-colors">Home</a>
+                        <a href="products.html" class="text-primary font-medium px-3 py-2 rounded-md hover:text-primary transition-colors">Products</a>
+                        <a href="about.html" class="text-gray-300 hover:text-white px-3 py-2 rounded-md font-medium transition-colors">About</a>
+                        <a href="contact.html" class="text-gray-300 hover:text-white px-3 py-2 rounded-md font-medium transition-colors">Contact</a>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center gap-4">
+                    <button class="text-gray-300 hover:text-white transition-colors"><i class="fas fa-search text-lg"></i></button>
+                    <button class="relative text-gray-300 hover:text-white transition-colors">
+                        <i class="fas fa-shopping-cart text-lg"></i>
+                        <span class="absolute -top-2 -right-2 bg-secondary text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">0</span>
+                    </button>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none"><i class="fas fa-bars text-2xl"></i></button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-dark/95 backdrop-blur-md border-b border-gray-800 absolute w-full">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="products.html" class="text-primary block px-3 py-2 rounded-md text-base font-medium">Products</a>
+                <a href="about.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About</a>
+                <a href="contact.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="bg-dark border-b border-gray-800 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-4xl font-bold text-white mb-4">Our <span class="text-primary">Products</span></h1>
+            <p class="text-gray-400">Browse our extensive collection of premium computer parts and accessories.</p>
+        </div>
+    </div>
+
+    <!-- Products Section -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="flex flex-col lg:flex-row gap-8">
+            
+            <!-- Sidebar Filters -->
+            <div class="w-full lg:w-1/4">
+                <div class="bg-dark rounded-xl p-6 border border-gray-800 sticky top-28">
+                    <h3 class="text-lg font-bold text-white mb-4 border-b border-gray-700 pb-2">Categories</h3>
+                    <ul class="space-y-3 mb-8">
+                        <li>
+                            <label class="flex items-center cursor-pointer group">
+                                <input type="checkbox" class="form-checkbox bg-darker border-gray-600 text-primary rounded focus:ring-primary focus:ring-offset-dark">
+                                <span class="ml-2 text-gray-400 group-hover:text-white transition-colors">Processors (CPU)</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="flex items-center cursor-pointer group">
+                                <input type="checkbox" class="form-checkbox bg-darker border-gray-600 text-primary rounded focus:ring-primary focus:ring-offset-dark" checked>
+                                <span class="ml-2 text-white font-medium transition-colors">Graphics Cards (GPU)</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="flex items-center cursor-pointer group">
+                                <input type="checkbox" class="form-checkbox bg-darker border-gray-600 text-primary rounded focus:ring-primary focus:ring-offset-dark">
+                                <span class="ml-2 text-gray-400 group-hover:text-white transition-colors">Motherboards</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="flex items-center cursor-pointer group">
+                                <input type="checkbox" class="form-checkbox bg-darker border-gray-600 text-primary rounded focus:ring-primary focus:ring-offset-dark">
+                                <span class="ml-2 text-gray-400 group-hover:text-white transition-colors">Memory (RAM)</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="flex items-center cursor-pointer group">
+                                <input type="checkbox" class="form-checkbox bg-darker border-gray-600 text-primary rounded focus:ring-primary focus:ring-offset-dark">
+                                <span class="ml-2 text-gray-400 group-hover:text-white transition-colors">Storage (SSD/HDD)</span>
+                            </label>
+                        </li>
+                    </ul>
+
+                    <h3 class="text-lg font-bold text-white mb-4 border-b border-gray-700 pb-2">Price Range</h3>
+                    <div class="space-y-4">
+                        <input type="range" min="0" max="1000000" value="500000" class="w-full accent-primary">
+                        <div class="flex items-center justify-between text-sm text-gray-400">
+                            <span>Rs. 0</span>
+                            <span>Rs. 1,000,000+</span>
+                        </div>
+                    </div>
+
+                    <button class="w-full mt-8 bg-primary hover:bg-indigo-500 text-white font-medium py-2 rounded-lg transition-colors">
+                        Apply Filters
+                    </button>
+                </div>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="w-full lg:w-3/4">
+                <div class="flex justify-between items-center mb-6">
+                    <p class="text-gray-400">Showing 1-9 of 48 products</p>
+                    <select class="bg-darker border border-gray-700 text-white text-sm rounded-lg focus:ring-primary focus:border-primary block p-2.5 outline-none">
+                        <option>Sort by: Featured</option>
+                        <option>Price: Low to High</option>
+                        <option>Price: High to Low</option>
+                        <option>Newest Arrivals</option>
+                    </select>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Products generated dynamically using script or static -->
+                    <!-- Product Item 1 -->
+                    <div class="bg-dark rounded-2xl p-4 border border-gray-800 hover:border-primary/50 transition-all duration-300 group">
+                        <div class="relative bg-gray-900 rounded-xl mb-4 overflow-hidden aspect-square flex items-center justify-center">
+                            <img src="https://images.unsplash.com/photo-1591488320449-011701bb6704?q=80&w=800&auto=format&fit=crop" alt="RTX 4090" class="w-3/4 object-contain group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3">
+                                <button class="bg-white text-dark w-10 h-10 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors transform translate-y-4 group-hover:translate-y-0 duration-300"><i class="fas fa-shopping-cart"></i></button>
+                            </div>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white mb-1 line-clamp-1">NVIDIA GeForce RTX 4090</h3>
+                        <p class="text-sm text-gray-400 mb-3">24GB GDDR6X</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xl font-bold text-white">Rs. 650,000</span>
+                        </div>
+                    </div>
+
+                    <!-- Product Item 2 -->
+                    <div class="bg-dark rounded-2xl p-4 border border-gray-800 hover:border-primary/50 transition-all duration-300 group">
+                        <div class="relative bg-gray-900 rounded-xl mb-4 overflow-hidden aspect-square flex items-center justify-center">
+                            <img src="https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?q=80&w=800&auto=format&fit=crop" alt="Ryzen 9" class="w-3/4 object-contain group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3">
+                                <button class="bg-white text-dark w-10 h-10 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors transform translate-y-4 group-hover:translate-y-0 duration-300"><i class="fas fa-shopping-cart"></i></button>
+                            </div>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white mb-1 line-clamp-1">AMD Ryzen 9 7950X</h3>
+                        <p class="text-sm text-gray-400 mb-3">16-Core, 32-Thread</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xl font-bold text-white">Rs. 240,000</span>
+                        </div>
+                    </div>
+
+                    <!-- Product Item 3 -->
+                    <div class="bg-dark rounded-2xl p-4 border border-gray-800 hover:border-primary/50 transition-all duration-300 group">
+                        <div class="relative bg-gray-900 rounded-xl mb-4 overflow-hidden aspect-square flex items-center justify-center">
+                            <img src="https://images.unsplash.com/photo-1562976540-1502c2145186?q=80&w=800&auto=format&fit=crop" alt="RAM" class="w-3/4 object-contain group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3">
+                                <button class="bg-white text-dark w-10 h-10 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors transform translate-y-4 group-hover:translate-y-0 duration-300"><i class="fas fa-shopping-cart"></i></button>
+                            </div>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white mb-1 line-clamp-1">Corsair Dominator RAM</h3>
+                        <p class="text-sm text-gray-400 mb-3">32GB DDR5 6000MHz</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xl font-bold text-white">Rs. 85,000</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Additional Items for visual weight -->
+                     <div class="bg-dark rounded-2xl p-4 border border-gray-800 hover:border-primary/50 transition-all duration-300 group">
+                        <div class="relative bg-gray-900 rounded-xl mb-4 overflow-hidden aspect-square flex items-center justify-center">
+                            <img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?q=80&w=800&auto=format&fit=crop" alt="Case" class="w-3/4 object-contain group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3">
+                                <button class="bg-white text-dark w-10 h-10 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors transform translate-y-4 group-hover:translate-y-0 duration-300"><i class="fas fa-shopping-cart"></i></button>
+                            </div>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white mb-1 line-clamp-1">NZXT H9 Flow</h3>
+                        <p class="text-sm text-gray-400 mb-3">ATX Mid-Tower Case</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xl font-bold text-white">Rs. 65,000</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-dark rounded-2xl p-4 border border-gray-800 hover:border-primary/50 transition-all duration-300 group">
+                        <div class="relative bg-gray-900 rounded-xl mb-4 overflow-hidden aspect-square flex items-center justify-center">
+                            <img src="https://images.unsplash.com/photo-1531297172867-4f50efdc5754?q=80&w=800&auto=format&fit=crop" alt="Monitor" class="w-3/4 object-contain group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3">
+                                <button class="bg-white text-dark w-10 h-10 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors transform translate-y-4 group-hover:translate-y-0 duration-300"><i class="fas fa-shopping-cart"></i></button>
+                            </div>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white mb-1 line-clamp-1">LG UltraGear 27"</h3>
+                        <p class="text-sm text-gray-400 mb-3">1440p 165Hz IPS</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xl font-bold text-white">Rs. 120,000</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-dark rounded-2xl p-4 border border-gray-800 hover:border-primary/50 transition-all duration-300 group">
+                        <div class="relative bg-gray-900 rounded-xl mb-4 overflow-hidden aspect-square flex items-center justify-center">
+                            <img src="https://images.unsplash.com/photo-1625842268584-8f3296236761?q=80&w=800&auto=format&fit=crop" alt="Cooler" class="w-3/4 object-contain group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3">
+                                <button class="bg-white text-dark w-10 h-10 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors transform translate-y-4 group-hover:translate-y-0 duration-300"><i class="fas fa-shopping-cart"></i></button>
+                            </div>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white mb-1 line-clamp-1">NZXT Kraken Elite 360</h3>
+                        <p class="text-sm text-gray-400 mb-3">AIO Liquid Cooler with LCD</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xl font-bold text-white">Rs. 95,000</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <div class="flex justify-center mt-12">
+                    <nav class="flex items-center gap-2">
+                        <button class="w-10 h-10 rounded-lg bg-dark border border-gray-800 text-gray-400 hover:text-white hover:border-primary flex items-center justify-center transition-colors"><i class="fas fa-chevron-left"></i></button>
+                        <button class="w-10 h-10 rounded-lg bg-primary text-white font-medium flex items-center justify-center">1</button>
+                        <button class="w-10 h-10 rounded-lg bg-dark border border-gray-800 text-gray-400 hover:text-white hover:border-primary flex items-center justify-center transition-colors">2</button>
+                        <button class="w-10 h-10 rounded-lg bg-dark border border-gray-800 text-gray-400 hover:text-white hover:border-primary flex items-center justify-center transition-colors">3</button>
+                        <button class="w-10 h-10 rounded-lg bg-dark border border-gray-800 text-gray-400 hover:text-white hover:border-primary flex items-center justify-center transition-colors"><i class="fas fa-chevron-right"></i></button>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer (Same as index.html) -->
+    <footer class="bg-darker pt-16 pb-8 border-t border-gray-800 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-500 text-sm">
+            © 2026 MP Solutions. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

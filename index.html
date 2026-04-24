@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MP Solutions - Premium Computer Parts</title>
+    <meta name="description" content="Best place to buy premium computer components, gaming PCs, and accessories in Sri Lanka.">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#6366f1',
+                        secondary: '#ec4899',
+                        dark: '#0f172a',
+                        darker: '#020617',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-darker text-gray-200 font-sans antialiased selection:bg-primary selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.location.href='index.html'">
+                    <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-primary/30">
+                        MP
+                    </div>
+                    <span class="font-bold text-2xl tracking-tight text-white">Solutions</span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html" class="text-primary font-medium px-3 py-2 rounded-md hover:text-primary transition-colors">Home</a>
+                        <a href="products.html" class="text-gray-300 hover:text-white px-3 py-2 rounded-md font-medium transition-colors">Products</a>
+                        <a href="about.html" class="text-gray-300 hover:text-white px-3 py-2 rounded-md font-medium transition-colors">About</a>
+                        <a href="contact.html" class="text-gray-300 hover:text-white px-3 py-2 rounded-md font-medium transition-colors">Contact</a>
+                    </div>
+                </div>
+
+                <!-- Cart & Search Icons -->
+                <div class="hidden md:flex items-center gap-4">
+                    <button class="text-gray-300 hover:text-white transition-colors">
+                        <i class="fas fa-search text-lg"></i>
+                    </button>
+                    <button class="relative text-gray-300 hover:text-white transition-colors">
+                        <i class="fas fa-shopping-cart text-lg"></i>
+                        <span class="absolute -top-2 -right-2 bg-secondary text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">0</span>
+                    </button>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-dark/95 backdrop-blur-md border-b border-gray-800 absolute w-full">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="text-primary block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="products.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Products</a>
+                <a href="about.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About</a>
+                <a href="contact.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden pt-20">
+        <!-- Background Elements -->
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-gradient-to-b from-darker/60 via-darker/80 to-darker z-10"></div>
+            <!-- Using the successfully generated image path, but we'll use a placeholder for now to ensure it loads since it's local. Actually let's use a high quality Unsplash gaming setup -->
+            <img src="https://images.unsplash.com/photo-1587202372634-32705e3bf49c?q=80&w=2070&auto=format&fit=crop" alt="Gaming Setup" class="w-full h-full object-cover scale-105 animate-pulse-slow">
+        </div>
+        
+        <div class="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+            <div class="inline-block mb-4 px-4 py-1.5 rounded-full border border-primary/30 bg-primary/10 backdrop-blur-sm">
+                <span class="text-primary font-semibold text-sm tracking-wider uppercase">Welcome to the Next Level</span>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-500">
+                Build Your <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Dream Rig</span>
+            </h1>
+            <p class="mt-4 text-xl md:text-2xl text-gray-400 mb-10 max-w-3xl mx-auto font-light">
+                Premium computer components, custom builds, and accessories for gamers and professionals.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="products.html" class="px-8 py-4 rounded-lg bg-gradient-to-r from-primary to-secondary text-white font-bold text-lg hover:shadow-lg hover:shadow-primary/50 transform hover:-translate-y-1 transition-all duration-300">
+                    Shop Now <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+                <a href="#categories" class="px-8 py-4 rounded-lg bg-white/5 border border-white/10 text-white font-bold text-lg hover:bg-white/10 backdrop-blur-sm transition-all duration-300">
+                    Explore Categories
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-10 animate-bounce">
+            <a href="#categories" class="text-gray-400 hover:text-white transition-colors">
+                <i class="fas fa-chevron-down text-2xl"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="categories" class="py-24 bg-dark relative">
+        <div class="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-gray-700 to-transparent"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Shop by <span class="text-primary">Category</span></h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">Find exactly what you need to upgrade your setup or build a new one from scratch.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Category Card 1 -->
+                <a href="products.html?category=gpu" class="group relative rounded-2xl overflow-hidden aspect-[4/5] block cursor-pointer">
+                    <div class="absolute inset-0 bg-gradient-to-t from-darker via-darker/50 to-transparent z-10"></div>
+                    <img src="https://images.unsplash.com/photo-1591488320449-011701bb6704?q=80&w=2070&auto=format&fit=crop" alt="Graphics Cards" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 z-20 flex flex-col justify-end p-6">
+                        <h3 class="text-2xl font-bold text-white mb-1 group-hover:text-primary transition-colors">Graphics Cards</h3>
+                        <p class="text-gray-400 text-sm opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">RTX 40 Series & RX 7000 Series</p>
+                    </div>
+                </a>
+
+                <!-- Category Card 2 -->
+                <a href="products.html?category=cpu" class="group relative rounded-2xl overflow-hidden aspect-[4/5] block cursor-pointer">
+                    <div class="absolute inset-0 bg-gradient-to-t from-darker via-darker/50 to-transparent z-10"></div>
+                    <img src="https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?q=80&w=1974&auto=format&fit=crop" alt="Processors" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 z-20 flex flex-col justify-end p-6">
+                        <h3 class="text-2xl font-bold text-white mb-1 group-hover:text-primary transition-colors">Processors</h3>
+                        <p class="text-gray-400 text-sm opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">Intel Core & AMD Ryzen</p>
+                    </div>
+                </a>
+
+                <!-- Category Card 3 -->
+                <a href="products.html?category=ram" class="group relative rounded-2xl overflow-hidden aspect-[4/5] block cursor-pointer">
+                    <div class="absolute inset-0 bg-gradient-to-t from-darker via-darker/50 to-transparent z-10"></div>
+                    <img src="https://images.unsplash.com/photo-1562976540-1502c2145186?q=80&w=2062&auto=format&fit=crop" alt="Memory" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 z-20 flex flex-col justify-end p-6">
+                        <h3 class="text-2xl font-bold text-white mb-1 group-hover:text-primary transition-colors">Memory (RAM)</h3>
+                        <p class="text-gray-400 text-sm opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">High-speed DDR5 & RGB kits</p>
+                    </div>
+                </a>
+
+                <!-- Category Card 4 -->
+                <a href="products.html?category=peripherals" class="group relative rounded-2xl overflow-hidden aspect-[4/5] block cursor-pointer">
+                    <div class="absolute inset-0 bg-gradient-to-t from-darker via-darker/50 to-transparent z-10"></div>
+                    <img src="https://images.unsplash.com/photo-1615663245857-ac1e653815c7?q=80&w=2070&auto=format&fit=crop" alt="Peripherals" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 z-20 flex flex-col justify-end p-6">
+                        <h3 class="text-2xl font-bold text-white mb-1 group-hover:text-primary transition-colors">Peripherals</h3>
+                        <p class="text-gray-400 text-sm opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">Keyboards, Mice & Headsets</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="py-24 bg-darker relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-end mb-12">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-2">Featured <span class="text-primary">Products</span></h2>
+                    <p class="text-gray-400">Our most popular and highest rated components.</p>
+                </div>
+                <a href="products.html" class="hidden sm:flex items-center text-primary hover:text-secondary transition-colors font-medium">
+                    View All <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Product 1 -->
+                <div class="bg-dark rounded-2xl p-4 border border-gray-800 hover:border-primary/50 transition-all duration-300 group">
+                    <div class="relative bg-gray-900 rounded-xl mb-4 overflow-hidden aspect-square flex items-center justify-center">
+                        <div class="absolute top-2 left-2 bg-secondary text-white text-xs font-bold px-2 py-1 rounded">HOT</div>
+                        <img src="https://images.unsplash.com/photo-1591488320449-011701bb6704?q=80&w=800&auto=format&fit=crop" alt="RTX 4090" class="w-3/4 object-contain group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3">
+                            <button class="bg-white text-dark w-10 h-10 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors transform translate-y-4 group-hover:translate-y-0 duration-300">
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
+                            <button class="bg-white text-dark w-10 h-10 rounded-full flex items-center justify-center hover:bg-secondary hover:text-white transition-colors transform translate-y-4 group-hover:translate-y-0 duration-300 delay-75">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="mb-2 flex items-center gap-1 text-yellow-500 text-xs">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <span class="text-gray-500 ml-1">(24)</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-white mb-1 line-clamp-1">NVIDIA GeForce RTX 4090</h3>
+                    <p class="text-sm text-gray-400 mb-3">24GB GDDR6X</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-xl font-bold text-white">Rs. 650,000</span>
+                        <button class="text-primary hover:text-white transition-colors"><i class="fas fa-plus-circle text-2xl"></i></button>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="bg-dark rounded-2xl p-4 border border-gray-800 hover:border-primary/50 transition-all duration-300 group">
+                    <div class="relative bg-gray-900 rounded-xl mb-4 overflow-hidden aspect-square flex items-center justify-center">
+                        <img src="https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?q=80&w=800&auto=format&fit=crop" alt="Ryzen 9" class="w-3/4 object-contain group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3">
+                            <button class="bg-white text-dark w-10 h-10 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors transform translate-y-4 group-hover:translate-y-0 duration-300">
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
+                            <button class="bg-white text-dark w-10 h-10 rounded-full flex items-center justify-center hover:bg-secondary hover:text-white transition-colors transform translate-y-4 group-hover:translate-y-0 duration-300 delay-75">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="mb-2 flex items-center gap-1 text-yellow-500 text-xs">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        <span class="text-gray-500 ml-1">(18)</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-white mb-1 line-clamp-1">AMD Ryzen 9 7950X</h3>
+                    <p class="text-sm text-gray-400 mb-3">16-Core, 32-Thread Unlocked</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-xl font-bold text-white">Rs. 240,000</span>
+                        <button class="text-primary hover:text-white transition-colors"><i class="fas fa-plus-circle text-2xl"></i></button>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="bg-dark rounded-2xl p-4 border border-gray-800 hover:border-primary/50 transition-all duration-300 group">
+                    <div class="relative bg-gray-900 rounded-xl mb-4 overflow-hidden aspect-square flex items-center justify-center">
+                        <img src="https://images.unsplash.com/photo-1562976540-1502c2145186?q=80&w=800&auto=format&fit=crop" alt="Corsair RAM" class="w-3/4 object-contain group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3">
+                            <button class="bg-white text-dark w-10 h-10 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors transform translate-y-4 group-hover:translate-y-0 duration-300">
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
+                            <button class="bg-white text-dark w-10 h-10 rounded-full flex items-center justify-center hover:bg-secondary hover:text-white transition-colors transform translate-y-4 group-hover:translate-y-0 duration-300 delay-75">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="mb-2 flex items-center gap-1 text-yellow-500 text-xs">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <span class="text-gray-500 ml-1">(42)</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-white mb-1 line-clamp-1">Corsair Dominator Platinum RGB</h3>
+                    <p class="text-sm text-gray-400 mb-3">32GB (2x16GB) DDR5 6000MHz</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-xl font-bold text-white">Rs. 85,000</span>
+                        <button class="text-primary hover:text-white transition-colors"><i class="fas fa-plus-circle text-2xl"></i></button>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="bg-dark rounded-2xl p-4 border border-gray-800 hover:border-primary/50 transition-all duration-300 group">
+                    <div class="relative bg-gray-900 rounded-xl mb-4 overflow-hidden aspect-square flex items-center justify-center">
+                        <div class="absolute top-2 left-2 bg-primary text-white text-xs font-bold px-2 py-1 rounded">NEW</div>
+                        <img src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=800&auto=format&fit=crop" alt="Motherboard" class="w-3/4 object-contain group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3">
+                            <button class="bg-white text-dark w-10 h-10 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors transform translate-y-4 group-hover:translate-y-0 duration-300">
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
+                            <button class="bg-white text-dark w-10 h-10 rounded-full flex items-center justify-center hover:bg-secondary hover:text-white transition-colors transform translate-y-4 group-hover:translate-y-0 duration-300 delay-75">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="mb-2 flex items-center gap-1 text-yellow-500 text-xs">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                        <span class="text-gray-500 ml-1">(12)</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-white mb-1 line-clamp-1">ASUS ROG Crosshair X670E</h3>
+                    <p class="text-sm text-gray-400 mb-3">ATX Motherboard</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-xl font-bold text-white">Rs. 185,000</span>
+                        <button class="text-primary hover:text-white transition-colors"><i class="fas fa-plus-circle text-2xl"></i></button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-10 text-center sm:hidden">
+                <a href="products.html" class="inline-block px-6 py-3 rounded-lg border border-primary text-primary hover:bg-primary hover:text-white transition-colors font-medium">
+                    View All Products
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-24 bg-dark relative border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Why Choose <span class="text-primary">MP Solutions</span></h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">We provide the best service and highest quality components in Sri Lanka.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-darker p-8 rounded-2xl border border-gray-800 hover:-translate-y-2 transition-transform duration-300 text-center">
+                    <div class="w-16 h-16 mx-auto bg-primary/10 rounded-full flex items-center justify-center mb-6 text-primary text-2xl">
+                        <i class="fas fa-truck-fast"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Fast Delivery</h3>
+                    <p class="text-gray-400">Island-wide quick delivery straight to your doorstep within 1-3 working days.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-darker p-8 rounded-2xl border border-gray-800 hover:-translate-y-2 transition-transform duration-300 text-center">
+                    <div class="w-16 h-16 mx-auto bg-secondary/10 rounded-full flex items-center justify-center mb-6 text-secondary text-2xl">
+                        <i class="fas fa-shield-halved"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Genuine Warranty</h3>
+                    <p class="text-gray-400">All our products come with official agent warranty. Your investment is safe with us.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-darker p-8 rounded-2xl border border-gray-800 hover:-translate-y-2 transition-transform duration-300 text-center">
+                    <div class="w-16 h-16 mx-auto bg-blue-500/10 rounded-full flex items-center justify-center mb-6 text-blue-500 text-2xl">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Expert Support</h3>
+                    <p class="text-gray-400">Got questions? Our team of PC building experts is ready to help you 24/7.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-darker pt-16 pb-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <!-- Brand -->
+                <div>
+                    <div class="flex items-center gap-2 mb-6">
+                        <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold shadow-lg">
+                            MP
+                        </div>
+                        <span class="font-bold text-xl tracking-tight text-white">Solutions</span>
+                    </div>
+                    <p class="text-gray-400 mb-6">Your ultimate destination for premium computer components and gaming gear in Sri Lanka.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-dark flex items-center justify-center text-gray-400 hover:text-white hover:bg-primary transition-colors"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-dark flex items-center justify-center text-gray-400 hover:text-white hover:bg-secondary transition-colors"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-dark flex items-center justify-center text-gray-400 hover:text-white hover:bg-blue-500 transition-colors"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+
+                <!-- Links -->
+                <div>
+                    <h4 class="text-white font-bold mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-gray-400 hover:text-primary transition-colors">Home</a></li>
+                        <li><a href="products.html" class="text-gray-400 hover:text-primary transition-colors">Products</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-primary transition-colors">About Us</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-primary transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Categories -->
+                <div>
+                    <h4 class="text-white font-bold mb-6">Categories</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Processors</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Graphics Cards</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Motherboards</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Memory</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Storage</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-white font-bold mb-6">Contact Us</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3 text-gray-400">
+                            <i class="fas fa-map-marker-alt mt-1 text-primary"></i>
+                            <span>123 Tech Avenue, Colombo 04, Sri Lanka</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-400">
+                            <i class="fas fa-phone text-primary"></i>
+                            <span>+94 77 123 4567</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-400">
+                            <i class="fas fa-envelope text-primary"></i>
+                            <span>info@mpsolutions.lk</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-500 text-sm">© 2026 MP Solutions. All rights reserved.</p>
+                <div class="flex gap-4 text-sm text-gray-500">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

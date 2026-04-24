@@ -1,0 +1,43 @@
+/* Custom styles to complement Tailwind */
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Scrollbar for a premium feel */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #020617; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1e293b; 
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #6366f1; 
+}
+
+/* Animations */
+@keyframes pulse-slow {
+    0%, 100% { transform: scale(1.05); }
+    50% { transform: scale(1); }
+}
+
+.animate-pulse-slow {
+    animation: pulse-slow 15s ease-in-out infinite;
+}
+
+/* Form inputs autocomplete style fixing for dark mode */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px #020617 inset !important;
+    -webkit-text-fill-color: white !important;
+    transition: background-color 5000s ease-in-out 0s;
+}
